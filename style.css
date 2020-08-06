@@ -1,1 +1,27 @@
+body{
+    margin:0;
+}
+
+.header{
+    color:
+}
+.hide{
+    display: none;
+}
+
+.grid{
+    background-color:#ffdecf;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+}
+
+.plants{
+    height: 150px;
+    width: 150px;
+    border:#3f4441 solid 1px;
+    display: flex;
+    margin: 10px;
+}
 

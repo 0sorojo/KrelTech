@@ -7,62 +7,138 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<section class="plants">
-    <div class="plants">
-        <img src="" alt="">
-    </div>
-    <div class="plants">
-        <img src="" alt="">
-    </div>
-    <div class="plants">
-        <img src="" alt="">
-    </div>
-    <div class="plants">
-        <img src="" alt="">
-    </div>
-    <div class="plants">
-        <img src="" alt="">
-    </div>
-    <div class="plants">
-        <img src="" alt="">
-    </div>
-    <div class="plants">
-        <img src="" alt="">
-    </div>
-    <div class="plants">
-        <img src="" alt="">
-    </div>
-    <div class="plants">
-        <img src="" alt="">
-    </div>
-    <div class="plants">
-        <img src="" alt="">
-    </div>
-    <div class="plants">
-        <img src="" alt="">
-    </div>
-    <div class="plants">
-        <img src="" alt="">
-    </div>
+    <!-- Landing page -->
+    <header class="header">
+        <h1 class="title"></h1>
+    </header>
 
+<section class="grid">
+    <div class="plants">
+        <img src="" alt="">
+    </div>
+    <div class="plants">
+        <img src="" alt="">
+    </div>
+    <div class="plants">
+        <img src="" alt="">
+    </div>
+    <div class="plants">
+        <img src="" alt="">
+    </div>
+    <div class="plants">
+        <img src="" alt="">
+    </div>
+    <div class="plants">
+        <img src="" alt="">
+    </div>
+    <div class="plants">
+        <img src="" alt="">
+    </div>
+    <div class="plants">
+        <img src="" alt="">
+    </div>
+    <div class="plants">
+        <img src="" alt="">
+    </div>
+    <div class="plants">
+        <img src="" alt="">
+    </div>
+    <div class="plants">
+        <img src="" alt="">
+    </div>
+    <div class="plants">
+        <img src="" alt="">
+    </div>
 </section>
-     
-           <!-- Section 2 -->
-           
-<section class="second-container">
 
-   <div class="subtotal"></div>
-   <div class="tax"></div>
-   <div class="total-due"></div>
-    <button class="review-cart"></button>
+                
+<section class="calculator">
+   <div class="subtotal-div">
+
+       <div class="label">
+        <P class="subtotal">subtotal</P>
+       </div>
+
+       <div>
+        <P class="subtotal-amt">$0.00</P>
+       </div>
+    </div>
+
+    <div class="tax-div">
+        <div class="label">
+         <P class="tax">tax</P>
+        </div>
+ 
+        <div>
+         <P class="tax-amt">$0.00</P>
+        </div>
+     </div>
+
+
+     <div class="totaldue-div">
+        <div class="label">
+         <P class="totaldue">TOTAL DUE</P>
+        </div>
+ 
+        <div>
+         <P class="totalDue-amt">$0.00</P>
+        </div>
+     </div>
+
+    <button class="review-cart">Review Your Cart</button>
     <div class="paynow-reset">
-        <button class="paynow"></button>
-        <button class="reset"></button>
+        <button class="paynow">PAY NOW</button>
+        <button class="reset">RESET</button>
     </div>
 </section>
+
+
+       <!-- Summary page -->
+
+
+<section class="summary-page hide">
+    <form class="receipt-form">
+       <div>
+           <p></p>
+           <p></p>
+           <p></p>
+           <p></p>
+       </div>
+
+       <div class="subtotal">subtotal</div>
+       <div class="tax">tax</div>
+       <div class="total-due">TOTAL DUE</div>
+       <button class="pay-button">PAY</button>
+       <div class= "checkout-btn">
+        <button class="continue-shopping">Contine Shopping</button>
+       <button class="reset-btn">RESET</button>
+       </div>
+       
+    </form>  
+</section>
+
+
+     <!-- Receipt page -->
+
+
+<section class="receipt-page hide">
+    <form class="receipt-form">
+        <div>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+ 
+        </div>
+        <div class="subtotal">subtotal</div>
+        <div class="tax">tax</div>
+        <div class="total-due">TOTAL DUE</div>
+</section>
+
 
 
 
     <script src="script.js"></script>
+
 </body>
 </html>
