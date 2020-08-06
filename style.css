@@ -1,6 +1,7 @@
 body,
 p,
-header {
+header,
+section {
   margin: 0;
   padding: 0;
 }
@@ -26,6 +27,8 @@ header {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  padding: 0;
+  margin-bottom: 160px;
 }
 
 .plants {
@@ -49,21 +52,42 @@ header {
 .plant-price {
   font-weight: 350;
 }
-.subtotal-div {
-  display: flex;
-  flex-direction: space-between;
-}
-.label {
-  flex: 1;
-}
-.amount {
-  flex: 1;
-}
-
-/* .small {
-
-}
-
+.small,
 .large {
+  display: flex;
+  justify-content: space-between;
+}
 
-} */
+.calculator {
+  background-color: white;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  margin: 5px;
+  padding: 10px;
+}
+
+.review-cart {
+  display: flex;
+  /* width: 100%; */
+  flex: 1;
+}
+
+.paynow-reset {
+  display: flex;
+}
+
+.paynow {
+  flex: 1;
+  /* margin-right: 5px; */
+}
+
+.reset {
+  flex: 1;
+  /* margin-left: 5px; */
+}
