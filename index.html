@@ -58,7 +58,7 @@
       <button class="review-cart button raleway">Review Your Cart</button>
       <div class="paynow-reset">
         <button class="paynow button raleway">PAY NOW</button>
-        <button class="reset button reset-btn1 raleway">RESET</button>
+        <button class="reset button reset-btn-landing raleway">RESET</button>
       </div>
     </section>
 
@@ -67,60 +67,19 @@
     <section class="summary-page">
       <div class="receipt-form hide">
         <div class="receipt-header">
-          <h2>Name</h2>
-          <h2>Qty</h2>
-          <h2>Price</h2>
+          <h2 class="lato">Name</h2>
+          <h2 class="lato">Price</h2>
         </div>
-        <div class="item-list">
-        </div>
+        <div class="item-list"></div>
 
-          <!-- cart lines -->
+        <!-- cart lines -->
 
-          <div class="subtotal-div small flex">
-            <div class="label">
-              <p class="subtotal raleway">subtotal</p>
-            </div>
-            <div class="amount">
-              <p class="subtotal-amt-cart raleway">$0.00</p>
-            </div>
-          </div>
-    
-          <div class="tax-div small flex">
-            <div class="label">
-              <p class="tax raleway">tax</p>
-            </div>
-            <div class="amount">
-              <p class="tax-amt-cart raleway">$0.00</p>
-            </div>
-          </div>
-    
-          <div class="totaldue-div large flex">
-            <div class="label">
-              <p class="totaldue raleway">TOTAL DUE</p>
-            </div>
-    
-            <div class="amount">
-              <p class="totalDue-amt-cart raleway">$0.00</p>
-            </div>
-          </div>
-        <button class="pay-button">PAY</button>
-        <div class="checkout-btn">
-          <button class="continue-shopping">Contine Shopping</button>
-          <button class="reset-btn2">RESET</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Receipt page -->
-
-    <section class="receipt-page hide">
-      <section class="calculator">
         <div class="subtotal-div small flex">
           <div class="label">
             <p class="subtotal raleway">subtotal</p>
           </div>
           <div class="amount">
-            <p class="subtotal-amt-rcpt raleway">$0.00</p>
+            <p class="subtotal-amt-cart raleway">$0.00</p>
           </div>
         </div>
 
@@ -129,7 +88,7 @@
             <p class="tax raleway">tax</p>
           </div>
           <div class="amount">
-            <p class="tax-amt-rcpt raleway">$0.00</p>
+            <p class="tax-amt-cart raleway">$0.00</p>
           </div>
         </div>
 
@@ -139,10 +98,143 @@
           </div>
 
           <div class="amount">
-            <p class="totalDue-amt-rcpt raleway">$0.00</p>
+            <p class="totalDue-amt-cart raleway">$0.00</p>
           </div>
         </div>
-      </section>
+        <button class="pay-button raleway button">PAY</button>
+        <div class="checkout-btn">
+          <button class="continue-shopping raleway button">
+            Contine Shopping
+          </button>
+          <button class="reset-btn2 raleway button">RESET</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment page -->
+
+    <section class="payment-page hide">
+      <div class="your-total-is">
+        <p class="your-total-is-text lato">Your total is:</p>
+        <p class="your-total-is-num big-money lato">$0.00</p>
+      </div>
+      <div class="money-buttons">
+        <button class="20-bucks money-btn lato" data-amt="20">$20</button>
+        <button class="50-bucks money-btn lato" data-amt="50">$50</button>
+        <button class="100-bucks money-btn lato" data-amt="100">$100</button>
+        <button class="enter-ur-own-bucks money-btn lato">
+          <form>
+            <label for="cash" class="lato">$</label>
+            <input
+              type="number"
+              name="cash"
+              id="cash"
+              placeholder="0.00"
+              class="lato"
+            />
+          </form>
+        </button>
+      </div>
+      <div class="your-change-is">
+        <p class="your-change-is-text lato">Your change:</p>
+        <p class="your-change-is-num big-money lato">$0.00</p>
+      </div>
+      <div class="credit-card">
+        <form>
+          <label for="ccn" class="lato">credit card number:</label>
+          <input
+            id="ccn"
+            type="tel"
+            inputmode="numeric"
+            maxlength="16"
+            class="lato"
+          />
+          <div>
+            <label for="expiry" class="lato">expiration</label>
+            <select name="expireMM" id="expireMM">
+              <option value="">month</option>
+              <option value="01">January</option>
+              <option value="02">February</option>
+              <option value="03">March</option>
+              <option value="04">April</option>
+              <option value="05">May</option>
+              <option value="06">June</option>
+              <option value="07">July</option>
+              <option value="08">August</option>
+              <option value="09">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+            <select name="expireYY" id="expireYY">
+              <option value="">year</option>
+              <option value="20">2020</option>
+              <option value="21">2021</option>
+              <option value="22">2022</option>
+              <option value="23">2023</option>
+              <option value="24">2024</option>
+              <option value="25">2025</option>
+            </select>
+            <label for="cvv" class="lato">cvv</label>
+            <input
+              id="cvv"
+              type="tel"
+              inputmode="numeric"
+              maxlength="16"
+              class="lato"
+            />
+          </div>
+          <button class="submit-payment lato">SUBMIT</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Receipt Send page -->
+    <section class="receipt-send-page hide">
+      <div class="receive-receipt">
+        <button class="receive receipt-button lato">Email receipt</button>
+        <button class="receive receipt-button lato">Print receipt</button>
+      </div>
+      <button class="receipt-button lato">No receipt</button>
+    </section>
+
+    <!-- Receipt page -->
+
+    <section class="receipt-page hide">
+      <!-- <section class="calculator"> -->
+      <div class="receipt-header">
+        <h2 class="lato">Name</h2>
+        <h2 class="lato">Price</h2>
+      </div>
+      <div class="item-list"></div>
+      <div class="subtotal-div small flex">
+        <div class="label">
+          <p class="subtotal raleway">subtotal</p>
+        </div>
+        <div class="amount">
+          <p class="subtotal-amt-rcpt raleway">$0.00</p>
+        </div>
+      </div>
+
+      <div class="tax-div small flex">
+        <div class="label">
+          <p class="tax raleway">tax</p>
+        </div>
+        <div class="amount">
+          <p class="tax-amt-rcpt raleway">$0.00</p>
+        </div>
+      </div>
+
+      <div class="totaldue-div large flex">
+        <div class="label">
+          <p class="totaldue raleway">TOTAL DUE</p>
+        </div>
+
+        <div class="amount">
+          <p class="totalDue-amt-rcpt raleway">$0.00</p>
+        </div>
+      </div>
+      <!-- </section> -->
     </section>
 
     <script src="script.js"></script>

@@ -38,10 +38,10 @@ let products = [
     altText: "Heartleaf Philo",
   },
   {
-    name: "Succulent Trio",
+    name: "Mystery Succulent",
     cost: 20,
     img: "/images/plantImgEdited7PNG.png",
-    altText: "Succulent Trio",
+    altText: "Mystery Succulent",
   },
   {
     name: "Purple Beauty",
@@ -78,9 +78,13 @@ let products = [
 let cartArray = [];
 
 let receipt = document.querySelector(".receipt-form");
+let pay = document.querySelector(".payment-page");
+let receiptSend = document.querySelector(".receipt-send-page");
+let receiptPage = document.querySelector(".receipt-page");
 let itemList = document.querySelector(".item-list");
 let subTotalParagraph = document.querySelector(".subtotal-amt");
 let grid = document.querySelector(".grid");
+let receiveReceipt = document.querySelector(".receive-receipt");
 let subTotalParagraphReceipt = document.querySelector(".subtotal-amt-rcpt");
 let subTotalParagraphCart = document.querySelector(".subtotal-amt-cart");
 let taxParagraphReceipt = document.querySelector(".tax-amt-rcpt");
@@ -101,31 +105,27 @@ const subTotalCalculator = (array) => {
   return subTotal;
 };
 
-
-const totalCalculator = ((subTotal) =>{
-tax = subTotal * 0.06;
-totalDue = subTotal + tax;
-taxParagraph.innerText = `$${tax}`;
-totalParagraph.innerText = `$${totalDue}`;
-taxParagraphReceipt.innerText = `$${tax}`;
-totalParagraphReceipt.innerText = `$${totalDue}`;
-taxParagraphCart.innerText = `$${tax}`;
-totalParagraphCart.innerText = `$${totalDue}`;
-});
- 
+const totalCalculator = (subTotal) => {
+  tax = subTotal * 0.06;
+  totalDue = subTotal + tax;
+  taxParagraph.innerText = `$${tax}`;
+  totalParagraph.innerText = `$${totalDue}`;
+  taxParagraphReceipt.innerText = `$${tax}`;
+  totalParagraphReceipt.innerText = `$${totalDue}`;
+  taxParagraphCart.innerText = `$${tax}`;
+  totalParagraphCart.innerText = `$${totalDue}`;
+};
 
 const populateReceipt = (array) => {
   itemList.innerHTML = "";
   for (let object of array) {
     let line = document.createElement("div");
-    line.classList.add("object");
+    line.classList.add("object", "lato");
     let nameParagraph = document.createElement("p");
     nameParagraph.innerText = object.name;
-    let qtyParagraph = document.createElement("p");
-    qtyParagraph.innerText = 0;
     let costParagraph = document.createElement("p");
     costParagraph.innerText = object.cost;
-    line.append(nameParagraph, qtyParagraph, costParagraph);
+    line.append(nameParagraph, costParagraph);
     itemList.append(line);
   }
 };
@@ -172,11 +172,10 @@ grid.addEventListener("click", (e) => {
     let subtotal = subTotalCalculator(cartArray);
     subTotalParagraph.innerText = `$${subtotal}.00`;
     subTotalParagraphReceipt.innerText = `$${subtotal}.00`;
-    subTotalParagraphCart.innerText =`$${subtotal}.00`;
+    subTotalParagraphCart.innerText = `$${subtotal}.00`;
     totalCalculator(subtotal);
   }
 });
-
 
 let reviewCartButton = document.querySelector(".review-cart");
 reviewCartButton.addEventListener("click", () => {
@@ -184,9 +183,30 @@ reviewCartButton.addEventListener("click", () => {
   console.log("viewable");
 });
 
+let payButton = document.querySelector(".pay-button");
+payButton.addEventListener("click", () => {
+  pay.classList.remove("hide");
+});
+
 let continueShoppingButton = document.querySelector(".continue-shopping");
 continueShoppingButton.addEventListener("click", () => {
+  preventDefault();
   receipt.classList.add("hide");
 });
 
+let submitPaymentButton = document.querySelector(".submit-payment");
+submitPaymentButton.addEventListener("click", () => {
+  event.preventDefault();
+  receiptSend.classList.remove("hide");
+});
 
+receiveReceipt.addEventListener("click", (e) => {
+  if (e.target.classList.contains("receive")) {
+    receiptPage.classList.remove("hide");
+  }
+});
+
+let resetButton = document.querySelector(".reset-btn-landing");
+resetButton.addEventListener("click", () => {
+  window.location.reload();
+});
