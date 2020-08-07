@@ -81,7 +81,16 @@ let receipt = document.querySelector(".receipt-form");
 let itemList = document.querySelector(".item-list");
 let subTotalParagraph = document.querySelector(".subtotal-amt");
 let grid = document.querySelector(".grid");
-
+let subTotalParagraphReceipt = document.querySelector(".subtotal-amt-rcpt");
+let subTotalParagraphCart = document.querySelector(".subtotal-amt-cart");
+let taxParagraphReceipt = document.querySelector(".tax-amt-rcpt");
+let taxParagraphCart = document.querySelector(".tax-amt-cart");
+let totalParagraphReceipt = document.querySelector(".totalDue-amt-rcpt");
+let totalParagraphCart = document.querySelector(".totalDue-amt-cart");
+let totalParagraph = document.querySelector(".totalDue-amt");
+let taxParagraph = document.querySelector(".tax-amt");
+let totalDue = 0;
+let tax = 0;
 let subTotal = 0;
 
 const subTotalCalculator = (array) => {
@@ -91,6 +100,19 @@ const subTotalCalculator = (array) => {
   });
   return subTotal;
 };
+
+
+const totalCalculator = ((subTotal) =>{
+tax = subTotal * 0.06;
+totalDue = subTotal + tax;
+taxParagraph.innerText = `$${tax}`;
+totalParagraph.innerText = `$${totalDue}`;
+taxParagraphReceipt.innerText = `$${tax}`;
+totalParagraphReceipt.innerText = `$${totalDue}`;
+taxParagraphCart.innerText = `$${tax}`;
+totalParagraphCart.innerText = `$${totalDue}`;
+});
+ 
 
 const populateReceipt = (array) => {
   itemList.innerHTML = "";
@@ -148,9 +170,13 @@ grid.addEventListener("click", (e) => {
     populateReceipt(cartArray);
     console.log(cartArray);
     let subtotal = subTotalCalculator(cartArray);
-    subTotalParagraph.innerText = `$${subtotal}`;
+    subTotalParagraph.innerText = `$${subtotal}.00`;
+    subTotalParagraphReceipt.innerText = `$${subtotal}.00`;
+    subTotalParagraphCart.innerText =`$${subtotal}.00`;
+    totalCalculator(subtotal);
   }
 });
+
 
 let reviewCartButton = document.querySelector(".review-cart");
 reviewCartButton.addEventListener("click", () => {
@@ -162,3 +188,5 @@ let continueShoppingButton = document.querySelector(".continue-shopping");
 continueShoppingButton.addEventListener("click", () => {
   receipt.classList.add("hide");
 });
+
+
