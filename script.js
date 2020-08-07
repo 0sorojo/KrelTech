@@ -206,7 +206,9 @@ receiveReceipt.addEventListener("click", (e) => {
   }
 });
 
-let resetButton = document.querySelector(".reset-btn-landing");
-resetButton.addEventListener("click", () => {
-  window.location.reload();
+let resetButtons = document.querySelectorAll(".reset");
+resetButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    window.location.reload();
+  });
 });
