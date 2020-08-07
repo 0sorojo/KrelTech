@@ -5,6 +5,11 @@ section {
   margin: 0;
   padding: 0;
 }
+
+body {
+  background-color: #ffdecf;
+}
+
 .lato {
   font-family: "Lato", sans-serif;
 }
@@ -13,22 +18,18 @@ section {
 }
 
 .header {
-  background-color: #ffdecf;
+  /* background-color: #ffdecf; */
   display: flex;
   justify-content: center;
 }
 
-.hide {
-  display: none;
-}
-
 .grid {
-  background-color: #ffdecf;
+  /* background-color: #ffdecf; */
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   padding: 0;
-  margin-bottom: 160px;
+  margin-bottom: 200px;
 }
 
 .plants {
@@ -43,7 +44,7 @@ section {
 .detail {
   position: absolute;
   width: 100%;
-  bottom: 2px;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
   background-color: RGBA(174, 205, 185, 0.75);
@@ -52,8 +53,14 @@ section {
 .plant-price {
   font-weight: 350;
 }
+/* 
 .small,
 .large {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.flex {
   display: flex;
   justify-content: space-between;
 }
@@ -67,16 +74,22 @@ section {
   flex-direction: column;
 }
 
+.subtotal-div,
+.tax-div,
+.totaldue-div {
+  margin: 5px;
+}
+
 .button {
   margin: 5px;
   padding: 10px;
 }
 
-.review-cart {
+/* .review-cart {
   display: flex;
-  /* width: 100%; */
+  width: 100%;
   flex: 1;
-}
+} */
 
 .paynow-reset {
   display: flex;
@@ -90,4 +103,44 @@ section {
 .reset {
   flex: 1;
   /* margin-left: 5px; */
+}
+
+.img-container {
+  margin-top: 20px;
+}
+/* 
+.line-item {
+}
+
+.item {
+} */
+
+.receipt-form {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hide {
+  display: none;
+}
+
+.item-list {
+  background-color: white;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.item {
+  text-align: center;
 }

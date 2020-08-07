@@ -74,9 +74,51 @@ let products = [
     altText: "Pink Jelly Bean",
   },
 ];
+
+let cart = [];
+let receipt = document.querySelector(".receipt-form");
+let itemList = document.querySelector(".item-list");
+const populateReceipt = (product) => {
+  let lineItem = document.createElement("div");
+  lineItem.classList.add("lineItem");
+  let nameParagraph = document.createElement("p");
+  nameParagraph.innerText = product.name;
+  nameParagraph.classList.add("item");
+  let costParagraph = document.createElement("p");
+  costParagraph.innerText = product.cost;
+  costParagraph.classList.add("item");
+  lineItem.append(nameParagraph, costParagraph);
+  itemList.append(lineItem);
+  console.log(lineItem);
+};
+
+// console.log(cart);
+// const countElement = (array) => {
+//   let ItemObject = {
+//   name: product.name,
+// };
+//   for (let i = 0; i < cart.length; i++) {
+//     countItemObject[cart[i]] = (countItemObject[cart[i]] || 0) + 1;
+//     console.log(countItemObject);
+//     let countParagraph = document.createElement("p");
+//     countParagraph.innerText = countItemObject[cart[i]];
+//     cart.append(countItemObject);
+//     console.log(cart);
+//   }
+//   return countItemObject;
+// };
+
+// console.log(countItemObject);
+// let deleteButton = document.createElement("button");
+// deleteButton.innerText = "X";
+// deleteButton.classList.add("delete:");
+// deleteButton.setAttribute("data-index", index);
+
 let grid = document.querySelector(".grid");
 
 console.log(products);
+
+let newArray = [];
 
 products.forEach((product) => {
   let plantContainer = document.createElement("div");
@@ -94,7 +136,6 @@ products.forEach((product) => {
   image.setAttribute("alt", product.altText);
 
   let detail = document.createElement("div");
-  detail.innerText = product.name;
   detail.classList.add("detail");
 
   let plantName = document.createElement("p");
@@ -102,8 +143,23 @@ products.forEach((product) => {
   plantName.innerText = product.name;
   let plantPrice = document.createElement("p");
   plantPrice.classList.add("plant-price", "lato");
-  plantPrice.innerText = product.cost;
+  plantPrice.innerText = `$${product.cost}`;
+  detail.append(plantName);
   detail.append(plantPrice);
   plantContainer.append(detail);
   grid.append(plantContainer);
+
+  image.addEventListener("click", () => {
+    console.log("i heard a click");
+    console.log(product);
+    newArray.push(product);
+    // populateReceipt(product);
+    console.log(newArray);
+  });
+});
+
+let reviewCartButton = document.querySelector(".review-cart");
+reviewCartButton.addEventListener("click", () => {
+  receipt.classList.remove("hide");
+  console.log("viewable");
 });
