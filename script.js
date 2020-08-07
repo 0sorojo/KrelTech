@@ -75,22 +75,53 @@ let products = [
   },
 ];
 
-let cart = [];
+// let cart = [];
 let receipt = document.querySelector(".receipt-form");
 let itemList = document.querySelector(".item-list");
-const populateReceipt = (product) => {
-  let lineItem = document.createElement("div");
-  lineItem.classList.add("lineItem");
-  let nameParagraph = document.createElement("p");
-  nameParagraph.innerText = product.name;
-  nameParagraph.classList.add("item");
-  let costParagraph = document.createElement("p");
-  costParagraph.innerText = product.cost;
-  costParagraph.classList.add("item");
-  lineItem.append(nameParagraph, costParagraph);
-  itemList.append(lineItem);
-  console.log(lineItem);
+
+const populateReceipt = (array) => {
+  array.forEach((object) => {
+    let line = document.createElement("div");
+    line.classList.add("object");
+    let nameParagraph = document.createElement("p");
+    nameParagraph.innerText = object.name;
+    let qtyParagraph = document.createElement("p");
+    qtyParagraph.innerText = 0;
+    let costParagraph = document.createElement("p");
+    costParagraph.innerText = object.cost;
+    line.append(nameParagraph, qtyParagraph, costParagraph);
+    itemList.append(line);
+
+    let resetButton2 = document.querySelector(".reset-btn2");
+    resetButton2.addEventListener("click", () => {
+      console.log("I hear a click!");
+      // array = [];
+      console.log(array);
+      line.remove();
+    });
+    let resetButton1 = document.querySelector(".reset-btn1");
+    resetButton1.addEventListener("click", () => {
+      console.log("I hear a click!");
+      // array = [];
+      console.log(array);
+      line.remove();
+    });
+  });
 };
+
+// const populateReceipt = (product) => {
+//   let lineItem = document.createElement("div");
+//   lineItem.classList.add("lineItem");
+//   let nameParagraph = document.createElement("p");
+//   nameParagraph.innerText = product.name;
+//   nameParagraph.classList.add("item");
+//   let costParagraph = document.createElement("p");
+//   costParagraph.innerText = product.cost;
+//   costParagraph.classList.add("item");
+//   lineItem.append(nameParagraph, costParagraph);
+//   itemList.append(lineItem);
+//   console.log(lineItem);
+// };
 
 // console.log(cart);
 // const countElement = (array) => {
@@ -118,18 +149,14 @@ let grid = document.querySelector(".grid");
 
 console.log(products);
 
-let newArray = [];
+let cartArray = [];
 
 products.forEach((product) => {
   let plantContainer = document.createElement("div");
   plantContainer.classList.add("plants");
-
   let imageContainer = document.createElement("div");
-
   imageContainer.classList.add("img");
-
   plantContainer.append(imageContainer);
-
   let image = document.createElement("img");
   imageContainer.append(image);
   image.setAttribute("src", product.img);
@@ -152,9 +179,10 @@ products.forEach((product) => {
   image.addEventListener("click", () => {
     console.log("i heard a click");
     console.log(product);
-    newArray.push(product);
+    cartArray.push(product);
     // populateReceipt(product);
-    console.log(newArray);
+    console.log(cartArray);
+    populateReceipt(cartArray);
   });
 });
 
@@ -162,4 +190,9 @@ let reviewCartButton = document.querySelector(".review-cart");
 reviewCartButton.addEventListener("click", () => {
   receipt.classList.remove("hide");
   console.log("viewable");
+});
+
+let continueShoppingButton = document.querySelector(".continue-shopping");
+continueShoppingButton.addEventListener("click", () => {
+  receipt.classList.add("hide");
 });
