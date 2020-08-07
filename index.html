@@ -62,7 +62,8 @@
       </div>
     </section>
 
-    <!-- Summary page -->
+    <!-- Shopping Cart -->
+
     <section class="summary-page">
       <div class="receipt-form hide">
         <div class="receipt-header">
@@ -71,11 +72,37 @@
           <h2>Price</h2>
         </div>
         <div class="item-list">
-          <!-- cart lines -->
         </div>
-        <div class="subtotal">subtotal</div>
-        <div class="tax">tax</div>
-        <div class="total-due">TOTAL DUE</div>
+
+          <!-- cart lines -->
+
+          <div class="subtotal-div small flex">
+            <div class="label">
+              <p class="subtotal raleway">subtotal</p>
+            </div>
+            <div class="amount">
+              <p class="subtotal-amt-cart raleway">$0.00</p>
+            </div>
+          </div>
+    
+          <div class="tax-div small flex">
+            <div class="label">
+              <p class="tax raleway">tax</p>
+            </div>
+            <div class="amount">
+              <p class="tax-amt-cart raleway">$0.00</p>
+            </div>
+          </div>
+    
+          <div class="totaldue-div large flex">
+            <div class="label">
+              <p class="totaldue raleway">TOTAL DUE</p>
+            </div>
+    
+            <div class="amount">
+              <p class="totalDue-amt-cart raleway">$0.00</p>
+            </div>
+          </div>
         <button class="pay-button">PAY</button>
         <div class="checkout-btn">
           <button class="continue-shopping">Contine Shopping</button>
@@ -85,6 +112,7 @@
     </section>
 
     <!-- Receipt page -->
+
     <section class="receipt-page hide">
       <section class="calculator">
         <div class="subtotal-div small flex">
@@ -92,7 +120,7 @@
             <p class="subtotal raleway">subtotal</p>
           </div>
           <div class="amount">
-            <p class="subtotal-amt raleway">$0.00</p>
+            <p class="subtotal-amt-rcpt raleway">$0.00</p>
           </div>
         </div>
 
@@ -101,7 +129,7 @@
             <p class="tax raleway">tax</p>
           </div>
           <div class="amount">
-            <p class="tax-amt raleway">$0.00</p>
+            <p class="tax-amt-rcpt raleway">$0.00</p>
           </div>
         </div>
 
@@ -111,7 +139,7 @@
           </div>
 
           <div class="amount">
-            <p class="totalDue-amt raleway">$0.00</p>
+            <p class="totalDue-amt-rcpt raleway">$0.00</p>
           </div>
         </div>
       </section>
