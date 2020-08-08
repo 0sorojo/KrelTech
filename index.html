@@ -122,18 +122,19 @@
         <button class="20-bucks money-btn lato" data-amt="20">$20</button>
         <button class="50-bucks money-btn lato" data-amt="50">$50</button>
         <button class="100-bucks money-btn lato" data-amt="100">$100</button>
-        <button class="enter-ur-own-bucks money-btn lato">
-          <form>
+        <div class="enter-ur-own-bucks lato">
+          <form class="amount-of-money-tendered">
             <label for="cash" class="lato">$</label>
             <input
-              type="number"
+              type="float"
               name="cash"
               id="cash"
               placeholder="0.00"
               class="lato"
             />
+            <button>PAY</button>
           </form>
-        </button>
+        </div>
       </div>
       <div class="your-change-is">
         <p class="your-change-is-text lato">Your change:</p>
@@ -206,7 +207,7 @@
         <h2 class="lato">Name</h2>
         <h2 class="lato">Price</h2>
       </div>
-      <div class="item-list"></div>
+      <div class="item-list-receipt"></div>
       <div class="subtotal-div small flex">
         <div class="label">
           <p class="subtotal raleway">subtotal</p>
@@ -232,6 +233,16 @@
 
         <div class="amount">
           <p class="totalDue-amt-rcpt raleway">$0.00</p>
+        </div>
+      </div>
+
+      <div class="totaldue-div large flex">
+        <div class="label">
+          <p class="change raleway">Change:</p>
+        </div>
+
+        <div class="amount">
+          <p class="your-change-is-rcpt raleway">$0.00</p>
         </div>
       </div>
       <!-- </section> -->
