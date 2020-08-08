@@ -111,6 +111,9 @@ body {
 
 .item {
 } */
+.receipt-page,
+.payment-page,
+.receipt-send-page,
 .summary-page {
   position: fixed;
   width: 100vw;
@@ -121,10 +124,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .receipt-form,
-.payment-page,
-.receipt-send-page,
-.receipt-page {
+.payment-div,
+.receive-receipt,
+.receipt-page-div{
   width: 50%;
   background-color: #ffdecf;
   z-index: 2;

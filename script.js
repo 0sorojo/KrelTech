@@ -77,7 +77,7 @@ let products = [
 
 let cartArray = [];
 
-let receipt = document.querySelector(".receipt-form");
+let receipt = document.querySelector(".summary-page");
 
 let pay = document.querySelector(".payment-page");
 
