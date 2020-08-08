@@ -78,24 +78,44 @@ let products = [
 let cartArray = [];
 
 let receipt = document.querySelector(".receipt-form");
+
 let pay = document.querySelector(".payment-page");
+
 let receiptSend = document.querySelector(".receipt-send-page");
+
 let receiptPage = document.querySelector(".receipt-page");
+
 let itemList = document.querySelector(".item-list");
-let subTotalParagraph = document.querySelector(".subtotal-amt");
+
 let grid = document.querySelector(".grid");
+
 let receiveReceipt = document.querySelector(".receive-receipt");
+
+let subTotalParagraph = document.querySelector(".subtotal-amt");
 let subTotalParagraphReceipt = document.querySelector(".subtotal-amt-rcpt");
 let subTotalParagraphCart = document.querySelector(".subtotal-amt-cart");
+
+let taxParagraph = document.querySelector(".tax-amt");
 let taxParagraphReceipt = document.querySelector(".tax-amt-rcpt");
 let taxParagraphCart = document.querySelector(".tax-amt-cart");
+
+let totalParagraph = document.querySelector(".totalDue-amt");
 let totalParagraphReceipt = document.querySelector(".totalDue-amt-rcpt");
 let totalParagraphCart = document.querySelector(".totalDue-amt-cart");
-let totalParagraph = document.querySelector(".totalDue-amt");
-let taxParagraph = document.querySelector(".tax-amt");
+let totalParagraphBigMoneyTotal = document.querySelector(".your-total-is-num");
+
+let changeParagraphBigMoney = document.querySelector(".your-change-is-num");
+let changeParagraphReceipt = document.querySelector(".your-change-is-rcpt");
+
+let cashTenderedForm = document.querySelector(".amount-of-money-tendered");
+
+let itemListReceipt = document.querySelector(".item-list-receipt");
+
 let totalDue = 0;
 let tax = 0;
 let subTotal = 0;
+let tenderReceived = 0;
+let change = 0;
 
 const subTotalCalculator = (array) => {
   subTotal = 0;
@@ -108,15 +128,37 @@ const subTotalCalculator = (array) => {
 const totalCalculator = (subTotal) => {
   tax = subTotal * 0.06;
   totalDue = subTotal + tax;
+
   taxParagraph.innerText = `$${tax}`;
   totalParagraph.innerText = `$${totalDue}`;
   taxParagraphReceipt.innerText = `$${tax}`;
   totalParagraphReceipt.innerText = `$${totalDue}`;
   taxParagraphCart.innerText = `$${tax}`;
   totalParagraphCart.innerText = `$${totalDue}`;
+  totalParagraphBigMoneyTotal.innerText = `$${totalDue}`;
 };
 
-const populateReceipt = (array) => {
+document.querySelectorAll(".money-btn").forEach((item) => {
+  item.addEventListener("click", () => {
+    tenderReceived = 0;
+    let amount = parseFloat(item.getAttribute("data-amt"));
+    tenderReceived += amount;
+    change = tenderReceived - totalDue;
+    changeParagraphBigMoney.innerText = `$${change}`;
+    changeParagraphReceipt.innerText = `$${change}`;
+  });
+});
+
+cashTenderedForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let data = new FormData(cashTenderedForm);
+  let cashtendered = data.get("cash");
+  change = cashtendered - totalDue;
+  changeParagraphBigMoney.innerText = `$${change}`;
+  cashTenderedForm.reset();
+});
+
+const populateCart = (array) => {
   itemList.innerHTML = "";
   for (let object of array) {
     let line = document.createElement("div");
@@ -127,6 +169,20 @@ const populateReceipt = (array) => {
     costParagraph.innerText = object.cost;
     line.append(nameParagraph, costParagraph);
     itemList.append(line);
+  }
+};
+
+const populateReceipt = (array) => {
+  itemListReceipt.innerHTML = "";
+  for (let receiptobject of array) {
+    let lineReceipt = document.createElement("div");
+    lineReceipt.classList.add("receiptobject", "lato");
+    let nameParagraphReceipt = document.createElement("p");
+    nameParagraphReceipt.innerText = receiptobject.name;
+    let costParagraphReceipt = document.createElement("p");
+    costParagraphReceipt.innerText = receiptobject.cost;
+    lineReceipt.append(nameParagraphReceipt, costParagraphReceipt);
+    itemListReceipt.append(lineReceipt);
   }
 };
 
@@ -152,9 +208,13 @@ products.forEach((product, index) => {
   let plantName = document.createElement("p");
   plantName.classList.add("plant-name", "lato");
   plantName.innerText = product.name;
+  plantName.classList.add("test");
+  plantName.setAttribute("data-index", index);
   let plantPrice = document.createElement("p");
   plantPrice.classList.add("plant-price", "lato");
   plantPrice.innerText = `$${product.cost}`;
+  plantPrice.classList.add("test");
+  plantPrice.setAttribute("data-index", index);
   detail.append(plantName);
   detail.append(plantPrice);
   plantContainer.append(detail);
@@ -167,13 +227,14 @@ grid.addEventListener("click", (e) => {
   if (e.target.classList.contains("test")) {
     let index = e.target.getAttribute("data-index");
     cartArray.push(products[index]);
-    populateReceipt(cartArray);
+    populateCart(cartArray);
     console.log(cartArray);
     let subtotal = subTotalCalculator(cartArray);
     subTotalParagraph.innerText = `$${subtotal}.00`;
     subTotalParagraphReceipt.innerText = `$${subtotal}.00`;
     subTotalParagraphCart.innerText = `$${subtotal}.00`;
     totalCalculator(subtotal);
+    populateReceipt(cartArray);
   }
 });
 

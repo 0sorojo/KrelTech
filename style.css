@@ -151,7 +151,8 @@ body {
   align-content: center;
 }
 
-.object {
+.object,
+.receiptobject {
   display: flex;
   justify-content: space-around;
 }
