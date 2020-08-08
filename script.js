@@ -125,27 +125,31 @@ const subTotalCalculator = (array) => {
   return subTotal;
 };
 
+let taxValue = 0;
+let totalDueValue = 0;
 const totalCalculator = (subTotal) => {
   tax = subTotal * 0.06;
+  taxValue = tax.toFixed(2);
   totalDue = subTotal + tax;
-
-  taxParagraph.innerText = `$${tax}`;
-  totalParagraph.innerText = `$${totalDue}`;
-  taxParagraphReceipt.innerText = `$${tax}`;
-  totalParagraphReceipt.innerText = `$${totalDue}`;
-  taxParagraphCart.innerText = `$${tax}`;
-  totalParagraphCart.innerText = `$${totalDue}`;
-  totalParagraphBigMoneyTotal.innerText = `$${totalDue}`;
+  totalDueValue = totalDue.toFixed(2);
+  taxParagraph.innerText = `$${taxValue}`;
+  totalParagraph.innerText = `$${totalDueValue}`;
+  taxParagraphReceipt.innerText = `$${taxValue}`;
+  totalParagraphReceipt.innerText = `$${totalDueValue}`;
+  taxParagraphCart.innerText = `$${taxValue}`;
+  totalParagraphCart.innerText = `$${totalDueValue}`;
+  totalParagraphBigMoneyTotal.innerText = `$${totalDueValue}`;
 };
-
+let changeAmount = 0;
 document.querySelectorAll(".money-btn").forEach((item) => {
   item.addEventListener("click", () => {
     tenderReceived = 0;
-    let amount = parseFloat(item.getAttribute("data-amt"));
+    let amount = Number(item.getAttribute("data-amt"));
     tenderReceived += amount;
     change = tenderReceived - totalDue;
-    changeParagraphBigMoney.innerText = `$${change}`;
-    changeParagraphReceipt.innerText = `$${change}`;
+    changeAmount = change.toFixed(2);
+    changeParagraphBigMoney.innerText = `$${changeAmount}`;
+    changeParagraphReceipt.innerText = `$${changeAmount}`;
   });
 });
 
@@ -154,7 +158,9 @@ cashTenderedForm.addEventListener("submit", (e) => {
   let data = new FormData(cashTenderedForm);
   let cashtendered = data.get("cash");
   change = cashtendered - totalDue;
-  changeParagraphBigMoney.innerText = `$${change}`;
+  changeAmount = change.toFixed(2);
+  changeParagraphBigMoney.innerText = `$${changeAmount}`;
+  changeParagraphReceipt.innerText = `$${changeAmount}`;
   cashTenderedForm.reset();
 });
 
@@ -166,7 +172,7 @@ const populateCart = (array) => {
     let nameParagraph = document.createElement("p");
     nameParagraph.innerText = object.name;
     let costParagraph = document.createElement("p");
-    costParagraph.innerText = object.cost;
+    costParagraph.innerText = `$${object.cost}.00`;
     line.append(nameParagraph, costParagraph);
     itemList.append(line);
   }
@@ -180,7 +186,7 @@ const populateReceipt = (array) => {
     let nameParagraphReceipt = document.createElement("p");
     nameParagraphReceipt.innerText = receiptobject.name;
     let costParagraphReceipt = document.createElement("p");
-    costParagraphReceipt.innerText = receiptobject.cost;
+    costParagraphReceipt.innerText = `$${receiptobject.cost}.00`;
     lineReceipt.append(nameParagraphReceipt, costParagraphReceipt);
     itemListReceipt.append(lineReceipt);
   }
@@ -249,9 +255,13 @@ payButton.addEventListener("click", () => {
   pay.classList.remove("hide");
 });
 
+let payNow = document.querySelector(".paynow");
+payNow.addEventListener("click", () => {
+  pay.classList.remove("hide");
+});
+
 let continueShoppingButton = document.querySelector(".continue-shopping");
 continueShoppingButton.addEventListener("click", () => {
-  preventDefault();
   receipt.classList.add("hide");
 });
 
@@ -272,4 +282,9 @@ resetButtons.forEach((button) => {
   button.addEventListener("click", () => {
     window.location.reload();
   });
+});
+
+let receiptButton = document.querySelector(".to-receipt");
+receiptButton.addEventListener("click", () => {
+  receiptSend.classList.remove("hide");
 });

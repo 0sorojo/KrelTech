@@ -29,7 +29,7 @@ body {
   flex-flow: row wrap;
   justify-content: center;
   padding: 0;
-  margin-bottom: 200px;
+  margin-bottom: 225px;
 }
 
 .plants {
@@ -38,6 +38,7 @@ body {
   /* border: #3f4441 solid 1px; */
   margin: 10px;
   position: relative;
+  border: solid 2px #ba7967;
   border-radius: 5px;
 }
 
@@ -54,12 +55,6 @@ body {
 .plant-price {
   font-weight: 350;
 }
-/* 
-.small,
-.large {
-  display: flex;
-  justify-content: space-between;
-} */
 
 .flex {
   display: flex;
@@ -73,6 +68,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  border-top: 5px solid #5e6f64;
 }
 
 .subtotal-div,
@@ -81,10 +77,10 @@ body {
   margin: 5px;
 }
 
-.button {
+/* .button {
   margin: 5px;
   padding: 10px;
-}
+} */
 
 /* .review-cart {
   display: flex;
@@ -115,21 +111,59 @@ body {
 
 .item {
 } */
-
+.summary-page {
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  background-color: #aecdb9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .receipt-form,
 .payment-page,
 .receipt-send-page,
 .receipt-page {
-  position: fixed;
-  width: 80%;
-  height: 75%;
-  top: 0;
-  background-color: #ffffff;
+  width: 50%;
+  background-color: #ffdecf;
   z-index: 2;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  padding: 20px;
+  border-radius: 15px;
+  border: 5px solid #ba7967;
+}
+.checkout-btn {
+  display: flex;
+}
+.pay-button,
+.review-cart {
+  padding: 20px;
+  font-size: 24px;
+}
+.continue-shopping,
+.paynow,
+.reset {
+  flex: 1;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.button {
+  background-color: #5e6f64;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin: 5px;
+  font-weight: 700;
+}
+.paynow {
+  background-color: #ba7967;
+}
+.totaldue {
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .receipt-header {
@@ -159,4 +193,7 @@ body {
 
 .item {
   text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
 }
