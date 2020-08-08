@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -51,21 +51,20 @@
         </div>
 
         <div class="amount">
-          <p class="totalDue-amt raleway">$0.00</p>
+          <p class="totalDue-amt totaldue raleway">$0.00</p>
         </div>
       </div>
 
       <button class="review-cart button raleway">Review Your Cart</button>
       <div class="paynow-reset">
-        <button class="paynow button raleway">PAY NOW</button>
         <button class="flex1 reset button raleway">RESET</button>
+        <button class="paynow button raleway">PAY NOW</button>
       </div>
     </section>
 
     <!-- Shopping Cart -->
-
-    <section class="summary-page">
-      <div class="receipt-form hide">
+    <section class="summary-page hide">
+      <div class="receipt-form">
         <div class="receipt-header">
           <h2 class="lato">Name</h2>
           <h2 class="lato">Price</h2>
@@ -73,10 +72,9 @@
         <div class="item-list"></div>
 
         <!-- cart lines -->
-
         <div class="subtotal-div small flex">
-          <div class="label">
-            <p class="subtotal raleway">subtotal</p>
+          <div class="label-container">
+            <p class="label subtotal raleway">subtotal</p>
           </div>
           <div class="amount">
             <p class="subtotal-amt-cart raleway">$0.00</p>
@@ -84,8 +82,8 @@
         </div>
 
         <div class="tax-div small flex">
-          <div class="label">
-            <p class="tax raleway">tax</p>
+          <div class="label-container">
+            <p class="label tax raleway">tax</p>
           </div>
           <div class="amount">
             <p class="tax-amt-cart raleway">$0.00</p>
@@ -93,12 +91,12 @@
         </div>
 
         <div class="totaldue-div large flex">
-          <div class="label">
-            <p class="totaldue raleway">TOTAL DUE</p>
+          <div class="label-container">
+            <p class="label totaldue raleway">TOTAL DUE</p>
           </div>
 
           <div class="amount">
-            <p class="totalDue-amt-cart raleway">$0.00</p>
+            <p class="totalDue-amt-cart totaldue raleway">$0.00</p>
           </div>
         </div>
         <button class="pay-button raleway button">PAY</button>
@@ -106,7 +104,7 @@
           <button class="continue-shopping raleway button">
             Contine Shopping
           </button>
-          <button class="flex1 reset raleway button">RESET</button>
+          <button class="reset raleway button">RESET</button>
         </div>
       </div>
     </section>
@@ -140,6 +138,7 @@
         <p class="your-change-is-text lato">Your change:</p>
         <p class="your-change-is-num big-money lato">$0.00</p>
       </div>
+      <button class="to-receipt">To Receipt</button>
       <div class="credit-card">
         <form>
           <label for="ccn" class="lato">credit card number:</label>
@@ -245,6 +244,7 @@
           <p class="your-change-is-rcpt raleway">$0.00</p>
         </div>
       </div>
+      <button class="reset">Back to Home</button>
       <!-- </section> -->
     </section>
 
