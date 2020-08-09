@@ -176,7 +176,11 @@ body {
 .receipt-header {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.h2 {
+  margin: 10px;
 }
 
 .hide {
@@ -190,12 +194,14 @@ body {
   display: flex;
   flex-direction: column;
   align-content: center;
+  margin-bottom: 20px;
 }
 
 .object,
 .receiptobject {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 0 8px;
 }
 
 .item {
@@ -214,7 +220,8 @@ body {
   align-items: center;
 }
 
-.money-btn {
+.money-btn,
+.nobutt {
   padding: 15px;
   font-size: 18px;
 }
@@ -281,7 +288,50 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
+  .master-container {
+    display: flex;
+  }
+
+  .grid {
+    flex: 2;
+    margin-bottom: 0px;
+  }
+
+  .calculator {
+    flex: 1;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: solid 5px #5e6f64;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 30px;
+    height: 50%;
+    padding: 10px 0;
+    /* justify-content: space-evenly; */
+    /* align-items: center; */
+  }
+
   .receipt-button:hover {
     background-color: #ba7967;
+  }
+
+  .button:hover,
+  .money-btn:hover {
+    background-color: #ba7967;
+  }
+
+  .paynow:hover {
+    background-color: #3f4441;
+  }
+
+  .money-buttons {
+    justify-content: space-around;
+  }
+
+  .amount-of-money-tendered {
+    display: flex;
+    justify-content: space-between;
   }
 }

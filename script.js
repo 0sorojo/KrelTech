@@ -1,5 +1,7 @@
 "use strict";
 
+//original
+
 let products = [
   {
     name: "Spikey Plant",
@@ -140,6 +142,7 @@ const totalCalculator = (subTotal) => {
   totalParagraphCart.innerText = `$${totalDueValue}`;
   totalParagraphBigMoneyTotal.innerText = `$${totalDueValue}`;
 };
+
 let changeAmount = 0;
 document.querySelectorAll(".money-btn").forEach((item) => {
   item.addEventListener("click", () => {
