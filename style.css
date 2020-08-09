@@ -128,7 +128,7 @@ body {
 .receipt-form,
 .payment-div,
 .receive-receipt,
-.receipt-page-div{
+.receipt-page-div {
   width: 50%;
   background-color: #ffdecf;
   z-index: 2;
@@ -146,6 +146,7 @@ body {
   padding: 20px;
   font-size: 24px;
 }
+
 .continue-shopping,
 .paynow,
 .reset {
@@ -162,9 +163,11 @@ body {
   margin: 5px;
   font-weight: 700;
 }
+
 .paynow {
   background-color: #ba7967;
 }
+
 .totaldue {
   font-weight: 700;
   font-size: 20px;
@@ -199,5 +202,86 @@ body {
   text-align: center;
 }
 
+.your-total-is,
+.your-change-is,
+.ccn-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.amount-of-money-tendered {
+  align-items: center;
+}
+
+.money-btn {
+  padding: 15px;
+  font-size: 18px;
+}
+
+.form-width {
+  width: 50%;
+  height: 45px;
+  font-size: 18px;
+}
+
+.money-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.dollar-sign {
+  font-size: 18px;
+}
+
+.hundo-btn {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.ccn-container,
+.expiration-container,
+.cvv-container {
+  font-size: 16px;
+  padding: 5px;
+  display: flex;
+  color: #3f4441;
+}
+
+.margin-left {
+  margin-left: 5px;
+}
+
+.your-total-is-text,
+.your-change-is-text {
+  font-size: 24px;
+  color: #3f4441;
+}
+
+.your-total-is-num,
+.your-change-is-num {
+  font-size: 48px;
+  color: #000;
+}
+
+.receipt-button {
+  background-color: #5e6f64;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 20px;
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+}
+
+.item-list-receipt {
+  margin-bottom: 20px;
+}
+
 @media only screen and (min-width: 768px) {
+  .receipt-button:hover {
+    background-color: #ba7967;
+  }
 }
