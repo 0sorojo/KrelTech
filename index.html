@@ -150,7 +150,7 @@
         </div>
         <button class="to-receipt hundo-btn button nobutt">
           <!-- money-btn was above -->
-          To Receipt
+          CASH OUT
         </button>
         <div class="credit-card">
           <form class="ccn-form">
@@ -212,7 +212,19 @@
     <!-- Receipt Send page -->
     <section class="receipt-send-page hide">
       <div class="receive-receipt">
-        <button class="receive receipt-button lato">Email receipt</button>
+        <form class="email-receipt-form">
+          <div class="email-entry">
+            <label for="email" class="email-label lato">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Please Enter Email"
+              class="lato email-input"
+            />
+          </div>
+          <button class="receive receipt-button lato">Email receipt</button>
+        </form>
         <button class="receive receipt-button lato">Print receipt</button>
         <button class="reset receipt-button lato">No receipt</button>
       </div>
