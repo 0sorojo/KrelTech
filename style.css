@@ -90,6 +90,7 @@ body {
 
 .paynow-reset {
   display: flex;
+  outline: none;
 }
 
 .paynow {
@@ -137,14 +138,17 @@ body {
   padding: 20px;
   border-radius: 15px;
   border: 5px solid #ba7967;
+  
 }
 .checkout-btn {
   display: flex;
+  outline: none;
 }
 .pay-button,
 .review-cart {
   padding: 20px;
   font-size: 24px;
+  outline: none;
 }
 
 .continue-shopping,
@@ -162,6 +166,7 @@ body {
   color: white;
   margin: 5px;
   font-weight: 700;
+  outline: none;
 }
 
 .paynow {
@@ -180,7 +185,8 @@ body {
 }
 
 .h2 {
-  margin: 10px;
+  margin: 6px;
+
 }
 
 .hide {
@@ -224,6 +230,14 @@ body {
 .nobutt {
   padding: 15px;
   font-size: 18px;
+}
+ 
+.money-buttons-div{
+  display: flex;
+}
+
+.money-btn{
+  flex: 1;
 }
 
 .form-width {
