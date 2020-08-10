@@ -281,6 +281,7 @@ submitPaymentButton.addEventListener("click", () => {
 
 receiveReceipt.addEventListener("click", (e) => {
   if (e.target.classList.contains("receive")) {
+    e.preventDefault();
     receiptPage.classList.remove("hide");
   }
 });
