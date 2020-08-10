@@ -18,13 +18,11 @@ body {
 }
 
 .header {
-  /* background-color: #ffdecf; */
   display: flex;
   justify-content: center;
 }
 
 .grid {
-  /* background-color: #ffdecf; */
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -35,7 +33,6 @@ body {
 .plants {
   height: 150px;
   width: 150px;
-  /* border: #3f4441 solid 1px; */
   margin: 10px;
   position: relative;
   border: solid 2px #ba7967;
@@ -77,17 +74,6 @@ body {
   margin: 5px;
 }
 
-/* .button {
-  margin: 5px;
-  padding: 10px;
-} */
-
-/* .review-cart {
-  display: flex;
-  width: 100%;
-  flex: 1;
-} */
-
 .paynow-reset {
   display: flex;
   outline: none;
@@ -95,23 +81,16 @@ body {
 
 .paynow {
   flex: 1;
-  /* margin-right: 5px; */
 }
 
 .flex1 {
   flex: 1;
-  /* margin-left: 5px; */
 }
 
 .img-container {
   margin-top: 20px;
 }
-/* 
-.line-item {
-}
 
-.item {
-} */
 .receipt-page,
 .payment-page,
 .receipt-send-page,
@@ -130,7 +109,7 @@ body {
 .payment-div,
 .receive-receipt,
 .receipt-page-div {
-  width: 50%;
+  width: 65%;
   background-color: #ffdecf;
   z-index: 2;
   display: flex;
@@ -139,10 +118,12 @@ body {
   border-radius: 15px;
   border: 5px solid #ba7967;
 }
+
 .checkout-btn {
   display: flex;
   outline: none;
 }
+
 .pay-button,
 .review-cart {
   padding: 20px;
@@ -192,7 +173,6 @@ body {
 }
 
 .item-list {
-  /* background-color: white; */
   top: 20px;
   width: 100%;
   display: flex;
@@ -221,7 +201,14 @@ body {
 }
 
 .amount-of-money-tendered {
+  display: flex;
   align-items: center;
+}
+
+.cash-plus-enter {
+  display: flex;
+  align-items: center;
+  padding: 0;
 }
 
 .money-btn,
@@ -232,6 +219,13 @@ body {
 
 .money-buttons-div {
   display: flex;
+  flex: 1;
+}
+
+.enter-ur-own-bucks {
+  display: flex;
+  flex: 1;
+  justify-content: center;
 }
 
 .money-btn {
@@ -239,7 +233,7 @@ body {
 }
 
 .form-width {
-  width: 50%;
+  width: 40%;
   height: 45px;
   font-size: 18px;
 }
@@ -298,18 +292,18 @@ body {
 .item-list-receipt {
   margin-bottom: 20px;
 }
+
 .email-receipt-form {
   display: flex;
   flex-direction: column;
 }
+
 .email-entry {
   display: flex;
   justify-content: center;
   padding: 5px;
 }
-/* .email-label {
-  flex: 1;
-} */
+
 .email-input {
   margin-left: 5px;
 }
@@ -336,8 +330,6 @@ body {
     margin-right: 30px;
     height: 50%;
     padding: 10px 0;
-    /* justify-content: space-evenly; */
-    /* align-items: center; */
   }
 
   .receipt-button:hover {
