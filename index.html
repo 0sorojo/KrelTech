@@ -131,16 +131,17 @@
           </div>
           <div class="enter-ur-own-bucks lato">
             <form class="amount-of-money-tendered">
-              <label for="cash" class="lato dollar-sign">$</label>
-              <input
-                type="float"
-                name="cash"
-                id="cash"
-                placeholder="0.00"
-                class="lato form-width"
-              />
+              <div class="cash-plus-enter">
+                <label for="cash" class="lato dollar-sign">$</label>
+                <input
+                  type="float"
+                  name="cash"
+                  id="cash"
+                  placeholder="0.00"
+                  class="lato form-width"
+                />
+              </div>
               <button class="button nobutt">PAY</button>
-              <!-- money-btn was above -->
             </form>
           </div>
         </div>
@@ -149,7 +150,6 @@
           <p class="your-change-is-num big-money lato">$0.00</p>
         </div>
         <button class="to-receipt hundo-btn button nobutt">
-          <!-- money-btn was above -->
           CASH OUT
         </button>
         <div class="credit-card">
@@ -233,7 +233,6 @@
     <!-- Receipt page -->
 
     <section class="receipt-page hide">
-      <!-- <section class="calculator"> -->
       <div class="receipt-page-div">
         <div class="receipt-header">
           <h2 class="lato h2">Name</h2>
