@@ -144,6 +144,7 @@ const totalCalculator = (subTotal) => {
 };
 
 let changeAmount = 0;
+
 document.querySelectorAll(".money-btn").forEach((item) => {
   item.addEventListener("click", () => {
     tenderReceived = 0;
@@ -271,6 +272,10 @@ continueShoppingButton.addEventListener("click", () => {
 let submitPaymentButton = document.querySelector(".submit-payment");
 submitPaymentButton.addEventListener("click", () => {
   event.preventDefault();
+  change = 0;
+  changeAmount = change.toFixed(2);
+  changeParagraphBigMoney.innerText = `$${changeAmount}`;
+  changeParagraphReceipt.innerText = `$${changeAmount}`;
   receiptSend.classList.remove("hide");
 });
 
