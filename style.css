@@ -301,8 +301,6 @@ body {
 .email-receipt-form {
   display: flex;
   flex-direction: column;
-  border: 3px solid #ba7967;
-  padding: 5px 0;
 }
 .email-entry {
   display: flex;
@@ -362,5 +360,10 @@ body {
   .amount-of-money-tendered {
     display: flex;
     justify-content: space-between;
+  }
+
+  .email-receipt-form {
+    border: 3px solid #ba7967;
+    padding: 5px 0;
   }
 }
